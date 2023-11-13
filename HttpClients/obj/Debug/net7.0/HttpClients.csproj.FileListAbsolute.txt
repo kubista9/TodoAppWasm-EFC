@@ -1,0 +1,15 @@
+/Users/jakubkuka/RiderProjects/TodoAppWasm-Blazor/HttpClients/bin/Debug/net7.0/HttpClients.deps.json
+/Users/jakubkuka/RiderProjects/TodoAppWasm-Blazor/HttpClients/bin/Debug/net7.0/HttpClients.dll
+/Users/jakubkuka/RiderProjects/TodoAppWasm-Blazor/HttpClients/bin/Debug/net7.0/HttpClients.pdb
+/Users/jakubkuka/RiderProjects/TodoAppWasm-Blazor/HttpClients/bin/Debug/net7.0/Domain.dll
+/Users/jakubkuka/RiderProjects/TodoAppWasm-Blazor/HttpClients/bin/Debug/net7.0/Domain.pdb
+/Users/jakubkuka/RiderProjects/TodoAppWasm-Blazor/HttpClients/obj/Debug/net7.0/HttpClients.csproj.AssemblyReference.cache
+/Users/jakubkuka/RiderProjects/TodoAppWasm-Blazor/HttpClients/obj/Debug/net7.0/HttpClients.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jakubkuka/RiderProjects/TodoAppWasm-Blazor/HttpClients/obj/Debug/net7.0/HttpClients.AssemblyInfoInputs.cache
+/Users/jakubkuka/RiderProjects/TodoAppWasm-Blazor/HttpClients/obj/Debug/net7.0/HttpClients.AssemblyInfo.cs
+/Users/jakubkuka/RiderProjects/TodoAppWasm-Blazor/HttpClients/obj/Debug/net7.0/HttpClients.csproj.CoreCompileInputs.cache
+/Users/jakubkuka/RiderProjects/TodoAppWasm-Blazor/HttpClients/obj/Debug/net7.0/HttpClients.csproj.CopyComplete
+/Users/jakubkuka/RiderProjects/TodoAppWasm-Blazor/HttpClients/obj/Debug/net7.0/HttpClients.dll
+/Users/jakubkuka/RiderProjects/TodoAppWasm-Blazor/HttpClients/obj/Debug/net7.0/refint/HttpClients.dll
+/Users/jakubkuka/RiderProjects/TodoAppWasm-Blazor/HttpClients/obj/Debug/net7.0/HttpClients.pdb
+/Users/jakubkuka/RiderProjects/TodoAppWasm-Blazor/HttpClients/obj/Debug/net7.0/ref/HttpClients.dll

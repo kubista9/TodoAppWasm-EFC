@@ -1,0 +1,40 @@
+{
+  "Users": [
+    {
+      "Id": 1,
+      "UserName": "serg"
+    },
+    {
+      "Id": 2,
+      "UserName": "nural"
+    },
+    {
+      "Id": 3,
+      "UserName": "matej"
+    },
+    {
+      "Id": 4,
+      "UserName": "jakub"
+    }
+  ],
+  "Todos": [
+    {
+      "Id": 1,
+      "Owner": {
+        "Id": 1,
+        "UserName": "serg"
+      },
+      "Title": "whatever",
+      "IsCompleted": false
+    },
+    {
+      "Id": 2,
+      "Owner": {
+        "Id": 1,
+        "UserName": "serg"
+      },
+      "Title": "test-todo1",
+      "IsCompleted": false
+    }
+  ]
+}

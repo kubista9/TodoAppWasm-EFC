@@ -1,0 +1,31 @@
+{
+  "Users": [
+    {
+      "Id": 1,
+      "UserName": "serg",
+      "Todos": null
+    },
+    {
+      "Id": 2,
+      "UserName": "nural",
+      "Todos": null
+    },
+    {
+      "Id": 3,
+      "UserName": "matej",
+      "Todos": null
+    }
+  ],
+  "Todos": [
+    {
+      "Id": 1,
+      "Owner": {
+        "Id": 1,
+        "UserName": "serg",
+        "Todos": null
+      },
+      "Title": "whatever",
+      "IsCompleted": false
+    }
+  ]
+}
