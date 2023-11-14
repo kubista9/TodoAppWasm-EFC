@@ -1,6 +1,7 @@
 using Application.DaoInterfaces;
 using Application.Logic;
 using Application.LogicInterfaces;
+using EfcDataAccess;
 using EfcDataAccess.DAOs;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,6 +18,7 @@ builder.Services.AddScoped<IUserLogic, UserLogic>();
 
 builder.Services.AddScoped<ITodoDao, TodoEfcDao>();
 builder.Services.AddScoped<ITodoLogic, TodoLogic>();
+builder.Services.AddDbContext<TodoContext>();
 
 var app = builder.Build();
 

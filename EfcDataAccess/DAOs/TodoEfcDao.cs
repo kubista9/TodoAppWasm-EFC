@@ -1,4 +1,6 @@
 using Application.DaoInterfaces;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Shared.DTOs;
 using Shared.Models;
 
@@ -6,28 +8,75 @@ namespace EfcDataAccess.DAOs;
 
 public class TodoEfcDao : ITodoDao
 {
-	public Task<Todo> CreateAsync(Todo todo)
+	private readonly TodoContext context;
+
+	public TodoEfcDao(TodoContext context)
 	{
-		throw new NotImplementedException();
+		this.context = context;
 	}
 
-	public Task<IEnumerable<Todo>> GetAsync(SearchTodoParametersDto searchParameters)
+	public async Task<Todo> CreateAsync(Todo todo)
+    {
+        EntityEntry<Todo> added = await context.Todos.AddAsync(todo);
+        await context.SaveChangesAsync();
+        return added.Entity;
+    }
+
+	public async Task<IEnumerable<Todo>> GetAsync(SearchTodoParametersDto searchParams)
 	{
-		throw new NotImplementedException();
+		IQueryable<Todo> query = context.Todos.Include(todo => todo.Owner).AsQueryable();
+
+		if (!string.IsNullOrEmpty(searchParams.Username))
+		{
+			// we know username is unique, so just fetch the first
+			query = query.Where(todo =>
+				todo.Owner.UserName.ToLower().Equals(searchParams.Username.ToLower()));
+		}
+
+		if (searchParams.UserId != null)
+		{
+			query = query.Where(t => t.Owner.Id == searchParams.UserId);
+		}
+
+		if (searchParams.CompletedStatus != null)
+		{
+			query = query.Where(t => t.IsCompleted == searchParams.CompletedStatus);
+		}
+
+		if (!string.IsNullOrEmpty(searchParams.TitleContains))
+		{
+			query = query.Where(t =>
+				t.Title.ToLower().Contains(searchParams.TitleContains.ToLower()));
+		}
+
+		List<Todo> result = await query.ToListAsync();
+		return result;
 	}
 
-	public Task UpdateAsync(Todo todo)
+
+	public async Task UpdateAsync(Todo todo)
 	{
-		throw new NotImplementedException();
+		context.Todos.Update(todo);
+		await context.SaveChangesAsync();
 	}
 
-	public Task<Todo?> GetByIdAsync(int todoId)
+	public async Task<Todo?> GetByIdAsync(int todoId)
 	{
-		throw new NotImplementedException();
+		Todo? found = await context.Todos
+			.Include(todo => todo.Owner)
+			.SingleOrDefaultAsync(todo => todo.Id == todoId);
+		return found;
 	}
 
-	public Task DeleteAsync(int id)
+	public async Task DeleteAsync(int id)
 	{
-		throw new NotImplementedException();
+		Todo? existing = await GetByIdAsync(id);
+		if (existing == null)
+		{
+			throw new Exception($"Todo with id {id} not found");
+		}
+
+		context.Todos.Remove(existing);
+		await context.SaveChangesAsync();
 	}
 }

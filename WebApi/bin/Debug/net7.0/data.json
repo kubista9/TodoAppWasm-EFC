@@ -2,18 +2,19 @@
   "Users": [
     {
       "Id": 1,
-      "UserName": "serg",
-      "Todos": null
+      "UserName": "serg"
     },
     {
       "Id": 2,
-      "UserName": "nural",
-      "Todos": null
+      "UserName": "nural"
     },
     {
       "Id": 3,
-      "UserName": "matej",
-      "Todos": null
+      "UserName": "matej"
+    },
+    {
+      "Id": 4,
+      "UserName": "jakub"
     }
   ],
   "Todos": [
@@ -21,10 +22,18 @@
       "Id": 1,
       "Owner": {
         "Id": 1,
-        "UserName": "serg",
-        "Todos": null
+        "UserName": "serg"
       },
       "Title": "whatever",
+      "IsCompleted": false
+    },
+    {
+      "Id": 2,
+      "Owner": {
+        "Id": 1,
+        "UserName": "serg"
+      },
+      "Title": "test-todo1",
       "IsCompleted": false
     }
   ]
